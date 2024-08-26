@@ -1,16 +1,15 @@
 import { createContext } from "react";
 import { useState } from "react";
 
-const AuthContext = createContext(null);
-export { AuthContext };
+export const TasksContext = createContext(null);
 
-export default function AuthProvider({ children }) {
+export default function TasksProvider({ children }) {
     const storedTasks = localStorage.getItem("tasks") ?? null;
     const [tasks, setTasks] = useState(storedTasks);
 
     return (
-        <AuthContext.Provider value={{ tasks, setTasks }}>
+        <TasksContext.Provider value={{ tasks, setTasks }}>
             {children}
-        </AuthContext.Provider>
+        </TasksContext.Provider>
     );
 }
