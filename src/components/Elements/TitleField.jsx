@@ -1,4 +1,4 @@
-export default function TitleField({ reference }) {
+export default function TitleField({ reference, editMode, title }) {
     return (
         <div>
             <input
@@ -6,6 +6,7 @@ export default function TitleField({ reference }) {
                 type="text"
                 placeholder="Enter the title"
                 ref={reference}
+                defaultValue={editMode && title}
             />
         </div>
     );

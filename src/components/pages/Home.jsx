@@ -6,6 +6,12 @@ import Task from "../Elements/Task";
 export default function Home() {
     let { tasks, saveTasks } = useContext(TasksContext);
 
+    const deleteTask = (id) => {
+        const newTasks = tasks.filter((task) => {
+            return task.id !== id;
+        });
+        saveTasks(newTasks);
+    };
     const filterTasks = (searchText) => {
         /*
         Code to filter tasks based on text
@@ -19,7 +25,11 @@ export default function Home() {
             {tasks && (
                 <ul>
                     {tasks.map((task) => (
-                        <Task key={task.id} task={task} />
+                        <Task
+                            key={task.id}
+                            task={task}
+                            deleteTask={deleteTask}
+                        />
                     ))}
                 </ul>
             )}

@@ -27,8 +27,8 @@ export default function AddTask() {
     };
     return (
         <div>
-            <TitleField reference={titleRef} />
-            <DescriptionField reference={descriptionRef} />
+            <TitleField reference={titleRef} editMode={false} />
+            <DescriptionField reference={descriptionRef} editMode={false} />
             <Link to="/">
                 <button type="text"> Cancel </button>
             </Link>
