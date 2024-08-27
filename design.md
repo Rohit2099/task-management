@@ -57,3 +57,9 @@ Figma link: https://www.figma.com/design/D3oHwiBHw5ccsjs3J0BbpJ/Interview?node-i
         -   CompletionStatus
         -   CancelButton
         -   AddButton
+
+Structure of Task:
+
+1. Title
+2. Description
+3. Completion status
