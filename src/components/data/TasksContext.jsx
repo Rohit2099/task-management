@@ -4,7 +4,7 @@ import { useState } from "react";
 export const TasksContext = createContext(null);
 
 export default function TasksProvider({ children }) {
-    const storedTasks = localStorage.getItem("tasks") ?? null;
+    const storedTasks = localStorage.getItem("tasks") ?? "rohit";
     const [tasks, setTasks] = useState(storedTasks);
 
     return (

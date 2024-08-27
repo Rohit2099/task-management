@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TasksProvider from "./components/data/TasksContext";
-import Home from "./components/Home";
+import TasksProvider from "./data/TasksContext";
+import Home from "./Home";
 
 function App() {
     return (
