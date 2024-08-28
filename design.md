@@ -63,3 +63,7 @@ Structure of Task:
 1. Title
 2. Description
 3. Completion status
+
+## Scope for optimization
+
+-   Cache NavBar

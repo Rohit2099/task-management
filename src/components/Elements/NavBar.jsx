@@ -2,7 +2,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const pathToTitleMap = {
     "/add": "Add Task",
-    "": "TO-DO APP",
     "/": "TO-DO APP",
     "/edit": "Edit Task",
 };
