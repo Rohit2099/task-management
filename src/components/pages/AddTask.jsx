@@ -30,11 +30,19 @@ export default function AddTask() {
             <TitleField reference={titleRef} editMode={false} />
             <DescriptionField reference={descriptionRef} editMode={false} />
             <Link to="/">
-                <button type="text"> Cancel </button>
+                <button
+                    type="button"
+                    className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-100 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                >
+                    Cancel
+                </button>{" "}
             </Link>
 
-            <button type="text" onClick={onAdd}>
-                {" "}
+            <button
+                type="button"
+                onClick={onAdd}
+                className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+            >
                 Add
             </button>
         </div>

@@ -12,7 +12,7 @@ export default function NavBar() {
     const title = pathToTitleMap[location.pathname] ?? "Error";
     const isHomePage = location.pathname === "" || location.pathname === "/";
     return (
-        <nav className="border-blue-500 bg-blue-800">
+        <nav className="border-blue-500 bg-blue-900">
             <div className="max-w-full p-3">
                 <span className="flex items-center space-x-4 pl-1">
                     {!isHomePage && (
