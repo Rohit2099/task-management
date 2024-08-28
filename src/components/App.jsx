@@ -4,11 +4,13 @@ import Home from "./pages/Home";
 import AddTask from "./pages/AddTask";
 import EditTask from "./pages/EditTask";
 import Error from "./pages/Error";
+import NavBar from "./elements/NavBar";
 
 function App() {
     return (
         <TasksProvider>
             <BrowserRouter>
+                <NavBar />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/add" element={<AddTask />} />
