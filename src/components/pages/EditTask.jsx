@@ -1,10 +1,10 @@
 import { useLocation, Link, useNavigate } from "react-router-dom";
-import CompletionField from "../Elements/CompletionField";
-import DescriptionField from "../Elements/DescriptionField";
-import TitleField from "../Elements/TitleField";
+import CompletionField from "../elements/CompletionField";
+import DescriptionField from "../elements/DescriptionField";
+import TitleField from "../elements/TitleField";
 import { useContext, useRef } from "react";
 import { TasksContext } from "../context/TasksContext";
-import ErrorPage from "./ErrorPage";
+import Error from "./Error";
 
 export default function EditTask() {
     const titleRef = useRef(null);
@@ -15,7 +15,7 @@ export default function EditTask() {
     const taskId = location.state?.taskId;
 
     if (!taskId) {
-        return <ErrorPage />;
+        return <Error />;
     }
     const taskToEdit = tasks.find((task) => task.id === taskId);
 
@@ -42,9 +42,8 @@ export default function EditTask() {
             <CompletionField />
             <Link to="/">
                 <button type="text"> Cancel </button>
-            </Link>{" "}
+            </Link>
             <button type="text" onClick={editTask}>
-                {" "}
                 Edit
             </button>
         </div>

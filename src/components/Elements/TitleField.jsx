@@ -1,4 +1,5 @@
 export default function TitleField({ reference, editMode, title }) {
+    const defaultText = editMode ? title : "";
     return (
         <div>
             <input
@@ -6,7 +7,7 @@ export default function TitleField({ reference, editMode, title }) {
                 type="text"
                 placeholder="Enter the title"
                 ref={reference}
-                defaultValue={editMode && title}
+                defaultValue={defaultText}
             />
         </div>
     );

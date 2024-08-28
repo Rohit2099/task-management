@@ -1,4 +1,5 @@
 export default function DescriptionField({ reference, editMode, description }) {
+    const defaultText = editMode ? description : "";
     return (
         <div>
             <textarea
@@ -6,7 +7,7 @@ export default function DescriptionField({ reference, editMode, description }) {
                 cols="50"
                 placeholder="Enter description"
                 ref={reference}
-                defaultValue={editMode && description}
+                defaultValue={defaultText}
             ></textarea>
         </div>
     );

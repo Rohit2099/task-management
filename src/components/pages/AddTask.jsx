@@ -1,6 +1,6 @@
 import { TasksContext } from "../context/TasksContext";
-import DescriptionField from "../Elements/DescriptionField";
-import TitleField from "../Elements/TitleField";
+import DescriptionField from "../elements/DescriptionField";
+import TitleField from "../elements/TitleField";
 import { useContext, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
