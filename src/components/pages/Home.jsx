@@ -2,14 +2,14 @@ import { useContext, useRef, useState } from "react";
 import { TasksContext } from "../context/TasksContext";
 import SearchField from "../elements/SearchField";
 import Task from "../elements/Task";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { debounce } from "../../utils/utils";
 import { DEBOUNCE_DELAY_FOR_SEARCH } from "../../utils/constants";
 
 export default function Home() {
     const { tasks, saveTasks } = useContext(TasksContext);
     const [filteredTasks, setFilteredTasks] = useState(tasks);
-
+    const navigate = useNavigate();
     const searchRef = useRef(null);
 
     const deleteTask = (id) => {
@@ -53,9 +53,13 @@ export default function Home() {
                     ))}
                 </ul>
             )}
-            <Link to="/add">
-                <button type="text">Add</button>
-            </Link>
+            <button
+                type="button"
+                className="text-white bg-blueMain-100 hover:bg-blue-800 font-medium rounded-full text-2xl p-4 items-center w-16"
+                onClick={() => navigate("/add")}
+            >
+                +
+            </button>
         </div>
     );
 }

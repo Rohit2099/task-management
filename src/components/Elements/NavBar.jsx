@@ -1,4 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const pathToTitleMap = {
     "/add": "Add Task",
@@ -12,14 +14,16 @@ export default function NavBar() {
     const title = pathToTitleMap[location.pathname] ?? "Error";
     const isHomePage = location.pathname === "" || location.pathname === "/";
     return (
-        <nav className="border-blue-500 bg-blue-900">
+        <nav className="border-blue-500 bg-blueMain-100">
             <div className="max-w-full p-3">
                 <span className="flex items-center space-x-4 pl-1">
                     {!isHomePage && (
-                        <img
-                            src="../../../public/left-chevron.png"
-                            className="h-6 hover:cursor-pointer"
+                        <FontAwesomeIcon
+                            className="hover:cursor-pointer"
+                            icon={faArrowLeft}
+                            size="2xl"
                             alt="Back button"
+                            style={{ color: "white" }}
                             onClick={() => navigate(-1)}
                         />
                     )}
