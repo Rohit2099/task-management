@@ -7,8 +7,7 @@ export default function ErrorPage() {
             <div className="mx-auto max-w-full py-16 px-6 text-center">
                 <h1 className="mb-4 font-extrabold text-9xl">404</h1>
                 <p className="mb-4 text-lg font-light text-gray-500">
-                    Sorry, we can't find that page. You'll find lots to explore
-                    on the home page.{" "}
+                    Are you sure you're on the write URL? Check again.
                 </p>
                 <button
                     onClick={() => navigate("/")}

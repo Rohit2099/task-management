@@ -14,7 +14,7 @@ export default function SearchField({ reference, handleSearch }) {
                 type="search"
                 ref={reference}
                 onChange={handleSearch}
-                className="w-full p-3 ps-10 text-md text-gray-900 border border-gray-400 rounded-md bg-gray-50 focus:border-blue-500"
+                className="w-full p-3 ps-10 text-gray-900 border border-gray-400 rounded-md bg-gray-50 focus:border-blue-500"
                 placeholder="Search To-Do"
                 required
             />

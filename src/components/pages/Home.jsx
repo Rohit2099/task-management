@@ -46,7 +46,7 @@ export default function Home() {
                 handleSearch={debounce(filterTasks, DEBOUNCE_DELAY_FOR_SEARCH)}
             />
             <div className="py-4">
-                {filteredTasks && (
+                {filteredTasks.length > 0 ? (
                     <ul>
                         {filteredTasks.map((task) => (
                             <Task
@@ -56,6 +56,12 @@ export default function Home() {
                             />
                         ))}
                     </ul>
+                ) : (
+                    <div className="text-center">
+                        <p className="text-gray-300 text-xl">
+                            Manage your tasks!
+                        </p>
+                    </div>
                 )}
             </div>
             <div className="flex items-center justify-end">

@@ -24,7 +24,8 @@ export default function EditTask() {
         newStatus = status;
     };
 
-    const editTask = () => {
+    const onUpdate = (e) => {
+        e.preventDefault();
         taskToEdit.description = descriptionRef.current.value;
         taskToEdit.title = titleRef.current.value;
         taskToEdit.status = newStatus;
@@ -34,35 +35,39 @@ export default function EditTask() {
     };
 
     return (
-        <div className="flex flex-col space-y-4 my-16">
-            <TitleField
-                reference={titleRef}
-                title={taskToEdit.title}
-                editMode={true}
-            />
-            <DescriptionField
-                reference={descriptionRef}
-                description={taskToEdit.description}
-                editMode={true}
-            />
-            <CompletionField status={taskToEdit.status} setStatus={setStatus} />
-            <div id="button-container" className="flex justify-between">
-                <Link to="/">
+        <div className="flex flex-col my-16">
+            <form onSubmit={onUpdate} className="space-y-4">
+                <TitleField
+                    reference={titleRef}
+                    title={taskToEdit.title}
+                    editMode={true}
+                />
+                <DescriptionField
+                    reference={descriptionRef}
+                    description={taskToEdit.description}
+                    editMode={true}
+                />
+                <CompletionField
+                    status={taskToEdit.status}
+                    setStatus={setStatus}
+                />
+                <div id="button-container" className="flex justify-between">
+                    <Link to="/">
+                        <button
+                            type="button"
+                            className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-200 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                        >
+                            Cancel
+                        </button>
+                    </Link>
                     <button
-                        type="button"
-                        className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-200 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                        type="submit"
+                        className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
                     >
-                        Cancel
+                        Update
                     </button>
-                </Link>
-                <button
-                    type="button"
-                    onClick={editTask}
-                    className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
-                >
-                    Update
-                </button>
-            </div>
+                </div>
+            </form>
         </div>
     );
 }

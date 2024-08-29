@@ -35,7 +35,7 @@ export default function CompletionField({ setStatus, status }) {
     return (
         <div id="select-container">
             <div
-                className="flex justify-between items-center p-2 border-2 border-gray-300 hover:cursor-pointer"
+                className="flex justify-between items-center p-2 px-4 border-2 border-gray-300 hover:cursor-pointer"
                 onClick={toggleDropdown}
             >
                 <TaskStatus status={selectedOption} />
