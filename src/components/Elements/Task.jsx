@@ -49,7 +49,7 @@ export default function Task({ task, deleteTask }) {
                                 icon={faTrashCan}
                                 size="xl"
                                 style={{ color: "#bc2424" }}
-                                onClick={() => deleteTask(task.id)}
+                                onClick={() => deleteTask(task.id, task.status)}
                             />
                             <FontAwesomeIcon
                                 icon={faPen}

@@ -5,8 +5,8 @@ export const PATH_TO_TITLE = {
     "/edit": "Edit Task",
 };
 export const STATUS_TO_COLOR = {
-    Pending: "gray",
     "In Progress": "orange",
+    Pending: "gray",
     Completed: "green",
 };
 export const TASK_STATUS = Object.keys(STATUS_TO_COLOR);
