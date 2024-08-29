@@ -70,7 +70,13 @@ Structure of Task:
 
 ## Things to consider
 
--   How to handle error pages in routing? - Done. Match for incorrect routes and creat a error component.
--   Convert add and edit to forms so we can handle empty title case.
+-   ~~How to handle error pages in routing?~~
+-   ~~Match for incorrect routes and creat a error component.~~
+-   ~~Convert add and edit to forms so we can handle empty title case.~~
 -   Add link to homepage in navbar.
 -   WHy is "react-select" and "react-icon" not working?
+-   Accept newLines in text area
+-   Convert task icons to alphabet icons
+-   Add accordian
+-   Add border on hover for buttons
+-   Add animations
