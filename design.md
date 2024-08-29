@@ -67,3 +67,10 @@ Structure of Task:
 ## Scope for optimization
 
 -   Cache NavBar
+
+## Things to consider
+
+-   How to handle error pages in routing? - Done. Match for incorrect routes and creat a error component.
+-   Convert add and edit to forms so we can handle empty title case.
+-   Add link to homepage in navbar.
+-   WHy is "react-select" and "react-icon" not working?

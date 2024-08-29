@@ -1,17 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-
-const pathToTitleMap = {
-    "/add": "Add Task",
-    "/": "TO-DO APP",
-    "/edit": "Edit Task",
-};
+import { PATH_TO_TITLE } from "../../utils/constants";
 
 export default function NavBar() {
     const location = useLocation();
     const navigate = useNavigate();
-    const title = pathToTitleMap[location.pathname] ?? "Error";
+    const title = PATH_TO_TITLE[location.pathname] ?? "Error";
     const isHomePage = location.pathname === "" || location.pathname === "/";
     return (
         <nav className="border-blue-500 bg-blueMain-100">

@@ -18,7 +18,7 @@ export default function AddTask() {
             id: uuidv4(),
             title,
             description,
-            completed: "Pending",
+            status: "Pending",
             createdAt: new Date().toDateString(),
         };
 

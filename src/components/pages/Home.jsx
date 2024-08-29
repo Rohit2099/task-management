@@ -24,16 +24,19 @@ export default function Home() {
         setFilteredTasks(newFilteredTasks);
     };
     const filterTasks = () => {
-        const searchText = searchRef.current.value;
-        console.count("trigger filter");
-        const newTasks = tasks.filter((task) => {
-            return (
-                task.description.includes(searchText) ||
-                task.title.includes(searchText)
-            );
-        });
+        let searchText = searchRef.current.value;
+        if (typeof searchText === "string") {
+            searchText = searchText.toLowerCase();
+            console.count("trigger filter");
+            const newTasks = tasks.filter((task) => {
+                return (
+                    task.description.toLowerCase().includes(searchText) ||
+                    task.title.toLowerCase().includes(searchText)
+                );
+            });
 
-        setFilteredTasks(newTasks);
+            setFilteredTasks(newTasks);
+        }
     };
 
     return (
@@ -55,7 +58,7 @@ export default function Home() {
             )}
             <button
                 type="button"
-                className="text-white bg-blueMain-100 hover:bg-blue-800 font-medium rounded-full text-2xl p-4 items-center w-16"
+                className="text-white bg-blueMain-100 hover:bg-blue-800 font-light rounded-full text-2xl p-4 items-center w-16"
                 onClick={() => navigate("/add")}
             >
                 +

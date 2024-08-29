@@ -18,10 +18,16 @@ export default function EditTask() {
         return <Error />;
     }
     const taskToEdit = tasks.find((task) => task.id === taskId);
+    let newStatus = taskToEdit.status;
+
+    const setStatus = (status) => {
+        newStatus = status;
+    };
 
     const editTask = () => {
         taskToEdit.description = descriptionRef.current.value;
         taskToEdit.title = titleRef.current.value;
+        taskToEdit.status = newStatus;
 
         saveTasks([...tasks]);
         navigate("/");
@@ -39,7 +45,7 @@ export default function EditTask() {
                 description={taskToEdit.description}
                 editMode={true}
             />
-            <CompletionField />
+            <CompletionField status={taskToEdit.status} setStatus={setStatus} />
             <Link to="/">
                 <button
                     type="button"
