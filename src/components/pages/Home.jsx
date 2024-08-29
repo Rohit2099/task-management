@@ -67,7 +67,7 @@ export default function Home() {
             <div className="flex items-center justify-end">
                 <button
                     type="button"
-                    className="text-white bg-blueMain-100 hover:bg-blue-800 font-light rounded-full text-2xl p-4 items-center w-16 fixed bottom-5 right-50 z-10"
+                    className="text-white bg-blueMain-100 hover:bg-blue-800 font-light rounded-full text-2xl p-4 items-center w-16 fixed bottom-8 right-50 z-10"
                     onClick={() => navigate("/add")}
                 >
                     +

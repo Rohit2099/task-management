@@ -33,20 +33,20 @@ export default function CompletionField({ setStatus, status }) {
     }, []);
 
     return (
-        <div id="select-container">
+        <div id="select-container" className="relative">
             <div
-                className="flex justify-between items-center p-2 px-4 border-2 border-gray-300 hover:cursor-pointer"
+                className="flex justify-between items-center p-2 px-4 border border-gray-300 hover:cursor-pointer"
                 onClick={toggleDropdown}
             >
                 <TaskStatus status={selectedOption} />
                 <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
             </div>
             {isOpen && (
-                <div className="w-full border border-gray-200 my-2">
+                <div className="w-full border border-gray-300 my-2 py-3 z-10 absolute bg-white">
                     {TASK_STATUS.map((option, index) => (
                         <div
                             key={index}
-                            className="p-2 hover:bg-gray-200 hover:cursor-pointer mx-3"
+                            className="p-3 hover:bg-gray-200 hover:cursor-pointer mx-3 "
                             onClick={() => handleOptionClick(option)}
                         >
                             <TaskStatus status={option} />

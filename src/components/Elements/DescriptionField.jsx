@@ -7,7 +7,7 @@ export default function DescriptionField({ reference, editMode, description }) {
                 placeholder="Enter the description"
                 ref={reference}
                 defaultValue={defaultText}
-                className="border-2 border-gray-300 text-md rounded-md focus:border-blue-500 w-full p-2.5"
+                className="border border-gray-300 text-md rounded-md focus:border-blue-500 w-full p-2.5"
             ></textarea>
         </div>
     );
