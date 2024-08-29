@@ -1,7 +1,7 @@
 export const DEBOUNCE_DELAY_FOR_SEARCH = 250;
 export const PATH_TO_TITLE = {
     "/add": "Add Task",
-    "/": "TO-DO APP",
+    "/": "TODO APP",
     "/edit": "Edit Task",
 };
 export const STATUS_TO_COLOR = {

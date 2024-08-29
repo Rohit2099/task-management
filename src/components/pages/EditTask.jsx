@@ -34,7 +34,7 @@ export default function EditTask() {
     };
 
     return (
-        <div>
+        <div className="flex flex-col space-y-4 my-16">
             <TitleField
                 reference={titleRef}
                 title={taskToEdit.title}
@@ -46,21 +46,23 @@ export default function EditTask() {
                 editMode={true}
             />
             <CompletionField status={taskToEdit.status} setStatus={setStatus} />
-            <Link to="/">
+            <div id="button-container" className="flex justify-between">
+                <Link to="/">
+                    <button
+                        type="button"
+                        className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-200 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                    >
+                        Cancel
+                    </button>
+                </Link>
                 <button
                     type="button"
-                    className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-100 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                    onClick={editTask}
+                    className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
                 >
-                    Cancel
+                    Update
                 </button>
-            </Link>
-            <button
-                type="button"
-                onClick={editTask}
-                className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
-            >
-                Update
-            </button>
+            </div>
         </div>
     );
 }

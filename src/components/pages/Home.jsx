@@ -45,24 +45,28 @@ export default function Home() {
                 reference={searchRef}
                 handleSearch={debounce(filterTasks, DEBOUNCE_DELAY_FOR_SEARCH)}
             />
-            {filteredTasks && (
-                <ul>
-                    {filteredTasks.map((task) => (
-                        <Task
-                            key={task.id}
-                            task={task}
-                            deleteTask={deleteTask}
-                        />
-                    ))}
-                </ul>
-            )}
-            <button
-                type="button"
-                className="text-white bg-blueMain-100 hover:bg-blue-800 font-light rounded-full text-2xl p-4 items-center w-16"
-                onClick={() => navigate("/add")}
-            >
-                +
-            </button>
+            <div className="py-4">
+                {filteredTasks && (
+                    <ul>
+                        {filteredTasks.map((task) => (
+                            <Task
+                                key={task.id}
+                                task={task}
+                                deleteTask={deleteTask}
+                            />
+                        ))}
+                    </ul>
+                )}
+            </div>
+            <div className="flex items-center justify-end">
+                <button
+                    type="button"
+                    className="text-white bg-blueMain-100 hover:bg-blue-800 font-light rounded-full text-2xl p-4 items-center w-16 fixed bottom-5 right-50 z-10"
+                    onClick={() => navigate("/add")}
+                >
+                    +
+                </button>
+            </div>
         </div>
     );
 }

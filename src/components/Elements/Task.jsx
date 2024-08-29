@@ -17,39 +17,43 @@ export default function Task({ task, deleteTask }) {
 
     return (
         <div
-            className="flex items-center border border-gray-100 rounded-md shadow hover:bg-gray-100 hover:cursor-pointer"
+            className="flex items-start border-b-2 border-gray-100 rounded-md hover:bg-gray-100 hover:cursor-pointer px-6 space-x-5"
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
         >
-            <FontAwesomeIcon
-                icon={faListCheck}
-                size="2xl"
-                style={{ color: "#034EA2" }}
-            />
+            <div className="py-5">
+                <FontAwesomeIcon
+                    icon={faListCheck}
+                    size="2xl"
+                    style={{ color: "#034EA2" }}
+                />
+            </div>
             <div
                 id="content"
-                className="flex flex-col justify-between p-5 leading-relaxed space-y-2"
+                className="flex flex-col justify-between py-5 leading-relaxed space-y-2 w-full"
             >
                 <div className="flex justify-between">
-                    <span className="text-blue-800 font-bold text-xl">
+                    <span className="text-blue-800 font-semibold text-xl">
                         {task.title}
                     </span>
                     <TaskStatus status={task.status} />
                 </div>
-                <div className="text-wrap">
+                <div className="text-wrap font-normal">
                     <p>{task.description}</p>
                 </div>
-                <div className="flex justify-between text-gray-400 text-sm">
+                <div className="flex justify-between text-gray-400 font-normal text-sm">
                     <p>{task.createdAt}</p>
                     {hovering && (
                         <div className="flex space-x-4">
                             <FontAwesomeIcon
                                 icon={faTrashCan}
+                                size="xl"
                                 style={{ color: "#bc2424" }}
                                 onClick={() => deleteTask(task.id)}
                             />
                             <FontAwesomeIcon
                                 icon={faPen}
+                                size="xl"
                                 style={{ color: "#034EA2" }}
                                 onClick={() =>
                                     navigate("/edit", {

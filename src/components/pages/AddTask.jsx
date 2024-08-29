@@ -26,25 +26,27 @@ export default function AddTask() {
         navigate("/");
     };
     return (
-        <div>
+        <div className="flex flex-col space-y-4 my-16">
             <TitleField reference={titleRef} editMode={false} />
             <DescriptionField reference={descriptionRef} editMode={false} />
-            <Link to="/">
+            <div id="button-container" className="flex justify-between">
+                <Link to="/">
+                    <button
+                        type="button"
+                        className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-200 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                    >
+                        Cancel
+                    </button>{" "}
+                </Link>
+
                 <button
                     type="button"
-                    className="text-blue-900 bg-white border border-blue-900 hover:bg-gray-100 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
+                    onClick={onAdd}
+                    className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
                 >
-                    Cancel
-                </button>{" "}
-            </Link>
-
-            <button
-                type="button"
-                onClick={onAdd}
-                className="text-white bg-blue-900 hover:bg-blue-800 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 w-32"
-            >
-                Add
-            </button>
+                    Add
+                </button>
+            </div>
         </div>
     );
 }

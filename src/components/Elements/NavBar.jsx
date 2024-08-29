@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <nav className="border-blue-500 bg-blueMain-100">
             <div className="max-w-full p-3">
-                <span className="flex items-center space-x-4 pl-1">
+                <span className="flex items-center space-x-4 pl-1 mx-4">
                     {!isHomePage && (
                         <FontAwesomeIcon
                             className="hover:cursor-pointer"
@@ -22,7 +22,7 @@ export default function NavBar() {
                             onClick={() => navigate(-1)}
                         />
                     )}
-                    <span className="text-2xl font-semibold text-white">
+                    <span className="text-xl font-normal text-white">
                         {title}
                     </span>
                 </span>
