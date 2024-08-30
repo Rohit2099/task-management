@@ -14,7 +14,6 @@ export default function AddTask() {
         e.preventDefault();
         let title = titleRef.current.value;
         let description = descriptionRef.current.value;
-        description = description.replace(/\n/g, "<br>");
         const newTask = {
             id: uuidv4(),
             title,

@@ -21,6 +21,7 @@ To run the app:
 -   Task is persisted across sessions. (data is stored in local storage)
 -   Error handling for incorrect routing
 -   Error handling at task creation
+-   Multi-line comments for tasks
     <br>
     <br>
 

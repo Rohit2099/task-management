@@ -16,7 +16,7 @@ export default function Task({ task, deleteTask }) {
         : "list-check";
 
     useEffect(() => {
-        pRef.current.innerHTML = task.description;
+        pRef.current.innerHTML = task.description.replace(/\n/g, "<br>");
     }, [task.description]);
 
     return (
