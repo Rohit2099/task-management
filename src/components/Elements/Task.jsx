@@ -57,7 +57,7 @@ export default function Task({ task, deleteTask }) {
                                         state: { taskId: task.id },
                                     })
                                 }
-                                className="hover:bg-gray-200 hover:border-2 w-10 h-10 box-border hover:rounded-md"
+                                className="hover:bg-gray-200 hover:border-2 w-10 h-10 hover:rounded-md"
                             >
                                 <FontAwesomeIcon
                                     icon={faPen}

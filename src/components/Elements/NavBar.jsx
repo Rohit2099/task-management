@@ -10,22 +10,21 @@ export default function NavBar() {
     const isHomePage = location.pathname === "" || location.pathname === "/";
     return (
         <nav className="border-blue-500 bg-blueMain-100">
-            <div className="max-w-full p-3">
-                <span className="flex items-center space-x-4 pl-1 mx-4">
-                    {!isHomePage && (
+            <div className="flex items-center space-x-4 pl-1 mx-4 py-3">
+                {!isHomePage && (
+                    <button
+                        className="hover:cursor-pointer hover:border-2 hover:rounded-md w-10 h-10 hover:border-gray-200"
+                        onClick={() => navigate(-1)}
+                    >
                         <FontAwesomeIcon
-                            className="hover:cursor-pointer"
                             icon={faArrowLeft}
                             size="2xl"
                             alt="Back button"
                             style={{ color: "white" }}
-                            onClick={() => navigate(-1)}
                         />
-                    )}
-                    <span className="text-xl font-normal text-white">
-                        {title}
-                    </span>
-                </span>
+                    </button>
+                )}
+                <span className="text-xl font-normal text-white">{title}</span>
             </div>
         </nav>
     );

@@ -78,7 +78,7 @@ Structure of Task:
 -   Accept newLines in text area
 -   ~~Convert task icons to alphabet icons~~
 -   ~~Add accordian~~
--   Add border on hover for buttons
+-   ~~Add border on hover for buttons~~
 -   Add animations for delete action
 -   Add transitions on editing and routing.
 -   Add no data text when there are no tasks
