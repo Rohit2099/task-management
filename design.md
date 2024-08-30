@@ -38,13 +38,14 @@ Figma link: https://www.figma.com/design/D3oHwiBHw5ccsjs3J0BbpJ/Interview?node-i
 -   NavBar
     -   Home
         -   SearchField
-        -   Tasks
-            -   Task
-                -   Title
-                -   Description
-                -   LastUpdated
-                -   CompletionStatus
-                -   DeleteButton
+        -   Accordian
+            -   Tasks
+                -   Task
+                    -   Title
+                    -   Description
+                    -   LastUpdated
+                    -   CompletionStatus
+                    -   DeleteButton
         -   AddTaskButton
     -   AddTask
         -   Title
@@ -58,11 +59,13 @@ Figma link: https://www.figma.com/design/D3oHwiBHw5ccsjs3J0BbpJ/Interview?node-i
         -   CancelButton
         -   AddButton
 
-Structure of Task:
+Structure of Task object that will be stored:
 
-1. Title
-2. Description
-3. Completion status
+1. UUID
+2. Title
+3. Description
+4. Completion status
+5. Created at
 
 ## Scope for optimization
 
@@ -74,7 +77,7 @@ Structure of Task:
 -   ~~Match for incorrect routes and creat a error component.~~
 -   ~~Convert add and edit to forms so we can handle empty title case.~~
 -   Add link to homepage in navbar.
--   WHy is "react-select" and "react-icon" not working?
+-   Why is "react-select" and "react-icon" not working?
 -   Accept newLines in text area
 -   ~~Convert task icons to alphabet icons~~
 -   ~~Add accordian~~
@@ -82,3 +85,5 @@ Structure of Task:
 -   Add animations for delete action
 -   Add transitions on editing and routing.
 -   Add no data text when there are no tasks
+-   Chunking?
+-   Try another bundler

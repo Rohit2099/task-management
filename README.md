@@ -4,9 +4,11 @@ A task managment app built using React.
 
 To run the app:
 
-1. clone the github project
+1. Clone the github project
 2. Run `npm install`
 3. Run `npm run preview` to open the app.
+   <br>
+   <br>
 
 # Features
 
@@ -19,6 +21,8 @@ To run the app:
 -   Task is persisted across sessions. (data is stored in local storage)
 -   Error handling for incorrect routing
 -   Error handling at task creation
+    <br>
+    <br>
 
 # Design Decisions
 
@@ -29,3 +33,9 @@ Reason: The tasks array is used by the home page, and the setTasks is used by ad
 ## Separating components for reuse
 
 Separated multiple components such as the Title input, Description inpur, Status identifier, accordian etc into its own modules to enable proper reuse and maintainability.
+
+Note: I've maintained my quick notes/design notes on the [design file](./design.md).
+
+## Grouping tasks by status
+
+We have the original list of tasks from the context API. To display the filtered list, I maintain a state variable that is an array of 3 elements -> for 3 task statuses. This data structure resulted in an easier implementation of the accordian as well. The accordian component is given tasks grouped by status.
