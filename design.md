@@ -77,7 +77,7 @@ Structure of Task:
 -   WHy is "react-select" and "react-icon" not working?
 -   Accept newLines in text area
 -   ~~Convert task icons to alphabet icons~~
--   Add accordian
+-   ~~Add accordian~~
 -   Add border on hover for buttons
 -   Add animations for delete action
 -   Add transitions on editing and routing.

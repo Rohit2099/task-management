@@ -34,7 +34,7 @@ export default function Task({ task, deleteTask }) {
             </div>
             <div
                 id="content"
-                className="flex flex-col justify-between py-5 leading-relaxed space-y-2 w-full"
+                className="flex flex-col justify-between pt-4 pb-2 leading-relaxed space-y-2 w-full"
             >
                 <div className="flex justify-between">
                     <span className="text-blue-800 font-semibold text-xl">
@@ -45,26 +45,36 @@ export default function Task({ task, deleteTask }) {
                 <div className="text-wrap font-normal">
                     <p ref={pRef}></p>
                 </div>
-                <div className="flex justify-between text-gray-400 font-normal text-sm">
-                    <p>{task.createdAt}</p>
+                <div className="flex justify-between text-gray-400 font-normal text-sm items-center min-h-10">
+                    <div>
+                        <p>{task.createdAt}</p>
+                    </div>
                     {hovering && (
-                        <div className="flex space-x-4">
-                            <FontAwesomeIcon
-                                icon={faTrashCan}
-                                size="xl"
-                                style={{ color: "#bc2424" }}
-                                onClick={() => deleteTask(task.id, task.status)}
-                            />
-                            <FontAwesomeIcon
-                                icon={faPen}
-                                size="xl"
-                                style={{ color: "#034EA2" }}
+                        <div className="flex space-x-2 items-center">
+                            <button
                                 onClick={() =>
                                     navigate("/edit", {
                                         state: { taskId: task.id },
                                     })
                                 }
-                            ></FontAwesomeIcon>
+                                className="hover:bg-gray-200 hover:border-2 w-10 h-10 box-border hover:rounded-md"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faPen}
+                                    size="xl"
+                                    style={{ color: "#034EA2" }}
+                                ></FontAwesomeIcon>
+                            </button>
+                            <button
+                                className="hover:bg-gray-200 hover:border-2 w-10 h-10 box-border hover:rounded-md"
+                                onClick={() => deleteTask(task.id, task.status)}
+                            >
+                                <FontAwesomeIcon
+                                    icon={faTrashCan}
+                                    size="xl"
+                                    style={{ color: "#bc2424" }}
+                                />
+                            </button>
                         </div>
                     )}
                 </div>
