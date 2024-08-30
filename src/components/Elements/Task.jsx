@@ -6,14 +6,19 @@ import {
     faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import TaskStatus from "./TaskStatus";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Task({ task, deleteTask }) {
     const navigate = useNavigate();
     const [hovering, setHovering] = useState(false);
+    const pRef = useRef(null);
 
     const handleMouseOver = () => setHovering(true);
     const handleMouseOut = () => setHovering(false);
+
+    useEffect(() => {
+        pRef.current.innerHTML = task.description;
+    }, [task.description]);
 
     return (
         <div
@@ -39,7 +44,7 @@ export default function Task({ task, deleteTask }) {
                     <TaskStatus status={task.status} />
                 </div>
                 <div className="text-wrap font-normal">
-                    <p>{task.description}</p>
+                    <p ref={pRef}></p>
                 </div>
                 <div className="flex justify-between text-gray-400 font-normal text-sm">
                     <p>{task.createdAt}</p>

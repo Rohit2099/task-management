@@ -18,7 +18,7 @@ export default function Accordian({
         <div id="accordian-container" className="flex flex-col space-y-4">
             <div
                 id="accordian-header"
-                className="bg-gray-200 px-4 py-2 rounded-md flex justify-between items-center hover:cursor-pointer"
+                className="bg-gray-200 px-4 py-2 rounded-md flex justify-between items-center hover:cursor-pointer hover:bg-gray-300"
                 onClick={handleToggle}
             >
                 <div>{`${status} (${tasks.length})`}</div>

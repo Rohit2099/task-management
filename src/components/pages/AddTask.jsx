@@ -1,7 +1,7 @@
 import { TasksContext } from "../context/TasksContext";
 import DescriptionField from "../elements/DescriptionField";
 import TitleField from "../elements/TitleField";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,9 +12,9 @@ export default function AddTask() {
     const navigate = useNavigate();
     const onAdd = (e) => {
         e.preventDefault();
-        const title = titleRef.current.value;
-        const description = descriptionRef.current.value;
-
+        let title = titleRef.current.value;
+        let description = descriptionRef.current.value;
+        description = description.replace(/\n/g, "<br>");
         const newTask = {
             id: uuidv4(),
             title,
@@ -26,6 +26,7 @@ export default function AddTask() {
         saveTasks([...tasks, newTask]);
         navigate("/");
     };
+
     return (
         <div className="flex flex-col my-16">
             <form onSubmit={onAdd} className="space-y-4">
