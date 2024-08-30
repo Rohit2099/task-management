@@ -5,8 +5,11 @@ import AddTask from "./pages/AddTask";
 import EditTask from "./pages/EditTask";
 import Error from "./pages/Error";
 import NavBar from "./elements/NavBar";
+import { loadAllSolidIcons } from "../utils/utils";
 
 function App() {
+    loadAllSolidIcons();
+
     return (
         <TasksProvider>
             <BrowserRouter>

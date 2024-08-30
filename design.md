@@ -76,7 +76,7 @@ Structure of Task:
 -   Add link to homepage in navbar.
 -   WHy is "react-select" and "react-icon" not working?
 -   Accept newLines in text area
--   Convert task icons to alphabet icons
+-   ~~Convert task icons to alphabet icons~~
 -   Add accordian
 -   Add border on hover for buttons
 -   Add animations for delete action

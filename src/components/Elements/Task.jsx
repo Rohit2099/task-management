@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faListCheck,
-    faPen,
-    faTrashCan,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPen, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import TaskStatus from "./TaskStatus";
 import { useEffect, useState, useRef } from "react";
 
@@ -15,6 +11,9 @@ export default function Task({ task, deleteTask }) {
 
     const handleMouseOver = () => setHovering(true);
     const handleMouseOut = () => setHovering(false);
+    const iconForTask = /[a-zA-Z]/g.test(task.title[0])
+        ? task.title[0].toLowerCase()
+        : "list-check";
 
     useEffect(() => {
         pRef.current.innerHTML = task.description;
@@ -28,7 +27,7 @@ export default function Task({ task, deleteTask }) {
         >
             <div className="py-5">
                 <FontAwesomeIcon
-                    icon={faListCheck}
+                    icon={["fas", iconForTask]}
                     size="2xl"
                     style={{ color: "#034EA2" }}
                 />
