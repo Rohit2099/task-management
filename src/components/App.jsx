@@ -12,10 +12,10 @@ function App() {
             <BrowserRouter>
                 <div
                     id="app-container"
-                    className="w-3/5 m-auto bg-white h-full"
+                    className="w-3/5 m-auto bg-white min-h-full flex flex-col h-auto"
                 >
                     <NavBar />
-                    <div id="content-container" className="m-6">
+                    <div id="content-container" className="m-6 h-full">
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/add" element={<AddTask />} />
