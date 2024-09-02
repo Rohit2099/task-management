@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import NavBar from "./elements/NavBar";
 import { loadAllSolidIcons } from "../utils/utils";
+import Loading from "./pages/Loading";
 
 const AddTask = lazy(() => import("./pages/AddTask"));
 const EditTask = lazy(() => import("./pages/EditTask"));
@@ -20,8 +21,11 @@ function App() {
                     className="w-3/5 m-auto bg-white min-h-full flex flex-col h-auto"
                 >
                     <NavBar />
-                    <div id="content-container" className="m-6 h-full">
-                        <Suspense fallback={<div>Loading.....</div>}>
+                    <div
+                        id="content-container"
+                        className="m-6 h-full flex flex-col flex-1"
+                    >
+                        <Suspense fallback={<Loading />}>
                             <Routes>
                                 <Route path="/" element={<Home />} />
                                 <Route path="/add" element={<AddTask />} />
