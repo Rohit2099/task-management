@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import TasksProvider from "./context/TasksContext";
 import Home from "./pages/Home";
-import AddTask from "./pages/AddTask";
-import EditTask from "./pages/EditTask";
 import Error from "./pages/Error";
 import NavBar from "./elements/NavBar";
 import { loadAllSolidIcons } from "../utils/utils";
+
+const AddTask = lazy(() => import("./pages/AddTask"));
+const EditTask = lazy(() => import("./pages/EditTask"));
 
 function App() {
     loadAllSolidIcons();
@@ -19,12 +21,14 @@ function App() {
                 >
                     <NavBar />
                     <div id="content-container" className="m-6 h-full">
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/add" element={<AddTask />} />
-                            <Route path="/edit" element={<EditTask />} />
-                            <Route path="*" element={<Error />} />
-                        </Routes>
+                        <Suspense fallback={<div>Loading.....</div>}>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/add" element={<AddTask />} />
+                                <Route path="/edit" element={<EditTask />} />
+                                <Route path="*" element={<Error />} />
+                            </Routes>
+                        </Suspense>
                     </div>
                 </div>
             </BrowserRouter>
